@@ -95,6 +95,7 @@ EXPOSE 8080
 EXPOSE 8081
 
 # monitor
+EXPOSE 8090
 EXPOSE 8091
 
 CMD ["/btc/start.sh"]

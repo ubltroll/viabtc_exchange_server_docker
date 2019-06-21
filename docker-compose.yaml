@@ -12,6 +12,7 @@ services:
       - "14444:4444"
       - "18080:8080"
       - "18081:8081"
+      - "18091:8090"
       - "18091:8091"
     depends_on:
       - zookeeper
@@ -82,3 +83,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - zookeeper
+
+  nginx:
+    restart: always
+    image: nginx:1.11.6-alpine
+    ports:
+      - "18092:18092"
+    volumes:
+      - ./nginx:/etc/nginx/site-enable
